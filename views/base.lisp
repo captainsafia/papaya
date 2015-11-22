@@ -1,4 +1,4 @@
-(:in-package :papaya)
+(in-package :papaya)
 
 (deflayout base (data :top-level t)
     (:html
