@@ -8,5 +8,5 @@
      (:file "config"    :depends-on ("package"))
      (:file "util"      :depends-on ("config"))
      (:file "template"  :depends-on ("util"))
-     (:file "init"      :depends-on ("template"))
-     (:file "routes"    :depends-on ("init"))))
+     (:file "app"       :depends-on ("template"))
+     (:file "routes"    :depends-on ("app"))))
