@@ -1,5 +1,8 @@
 (in-package :papaya)
 
+(setf cl-who:*attribute-quote-char* #\"
+      (cl-who:html-mode) :html5)
+
 (load-plugins :use-quicklisp t)
 
 (defun (error-handler err &optional socket)
@@ -9,6 +12,7 @@
 (defun start (&key bind (port 8080))
     (setf *log-level* :notice)
     (setf *error-handler* 'error-handler)
+    (format t "Running application server on ~D~%" port)
     
     (load-views)
 
@@ -21,5 +25,3 @@
               (as:free-signal-handler 2)
               (as:close-tcp-server server)
               (as:exit-event-loop))))))
-                
-    
